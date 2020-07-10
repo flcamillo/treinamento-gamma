@@ -11,7 +11,7 @@ public class Exercicio02 {
     public static void main(String[] args) {
         // cria os relogios
         Relogio relogio1 = new Relogio();
-        Relogio relogio2 = new Relogio(23, 30, 0);
+        Relogio relogio2 = new Relogio(23, 30, 59);
         // exibe o horario de cada relogio
         System.out.printf("Relogio com construtor padrão: %s\n", relogio1.Exibir());
         System.out.printf("Relogio com hora customizada : %s\n", relogio2.Exibir());
