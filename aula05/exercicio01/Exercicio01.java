@@ -15,7 +15,7 @@ public class Exercicio01 {
         Placar placar2 = new Placar("Brasil", "Argentina");
         Placar placar3 = new Placar("Brasil", 3, "Argentina", 0);
         // exibe o resultado de cada um
-        System.out.printf("Placar sem construtor: %s\n", placar1.Exibir());
+        System.out.printf("Placar com construtor padrão: %s\n", placar1.Exibir());
         System.out.printf("Placar apenas com os times: %s\n", placar2.Exibir());
         System.out.printf("Placar completo com os times e gols: %s\n", placar3.Exibir());
     }
