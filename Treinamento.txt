@@ -6,3 +6,6 @@ Apresentação pessoal e informar nivel de programação de 1-5
 Site sobre lógica de programação:
 code.org
 
+Site sobre o GIT
+https://learngitbranching.js.org/?locale=pt_BR
+
