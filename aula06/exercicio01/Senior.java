@@ -14,7 +14,9 @@ public class Senior extends Funcionario {
      */
     public Senior(String nome, float valorHora, float bonus) {
         super(nome, valorHora);
-        this.bonus = bonus;
+        if (bonus >= 0) {
+            this.bonus = bonus;
+        }
     }
 
     /**
@@ -43,7 +45,11 @@ public class Senior extends Funcionario {
      * @param bonus
      */
     public void setBonus(float bonus) {
-        this.bonus = bonus;
+        if (bonus >= 0) {
+            this.bonus = bonus;
+        } else {
+            this.bonus = 0;
+        }
     }
 
     /**

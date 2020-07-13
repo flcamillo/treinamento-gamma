@@ -11,7 +11,9 @@ public class Funcionario {
      */
     public Funcionario(String nome, float valorHora) {
         this.nome = nome;
-        this.valorHora = valorHora;
+        if (valorHora >= 0) {
+            this.valorHora = valorHora;
+        }
     }
 
     /**
@@ -42,7 +44,11 @@ public class Funcionario {
      * @param horasTrabalhadas
      */
     public void setHorasTrabalhadas(float horasTrabalhadas) {
-        this.horasTrabalhadas = horasTrabalhadas;
+        if (horasTrabalhadas >= 0) {
+            this.horasTrabalhadas = horasTrabalhadas;
+        } else {
+            this.horasTrabalhadas = 0;
+        }
     }
 
     /**
@@ -58,7 +64,11 @@ public class Funcionario {
      * @param valorHora
      */
     public void setValorHora(float valorHora) {
-        this.valorHora = valorHora;
+        if (valorHora >= 0) {
+            this.valorHora = valorHora;
+        } else {
+            this.valorHora = 0;
+        }
     }
 
     /**
