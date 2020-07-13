@@ -6,42 +6,73 @@ public class Funcionario {
     private float horasTrabalhadas;
     private float valorHora;
 
-    // construtor com nome e valor da hora trabalhada
+    /**
+     * Construtor com nome e valor da hora trabalhada
+     */
     public Funcionario(String nome, float valorHora) {
         this.nome = nome;
         this.valorHora = valorHora;
     }
 
+    /**
+     * Retorna o nome do funcionario
+     * @return nome
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     * Define o nome do funcionario
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    /**
+     * Retorna as horas trabalhadas
+     * @return horas
+     */
     public float getHorasTrabalhadas() {
         return horasTrabalhadas;
     }
 
+    /**
+     * Define as horas trabalhadas
+     * @param horasTrabalhadas
+     */
     public void setHorasTrabalhadas(float horasTrabalhadas) {
         this.horasTrabalhadas = horasTrabalhadas;
     }
 
+    /**
+     * Retorna o valor por hora trabalhada
+     * @return o valor da hora
+     */
     public float getValorHora() {
         return valorHora;
     }
 
+    /**
+     * Define o valor da hora trabalhada
+     * @param valorHora
+     */
     public void setValorHora(float valorHora) {
         this.valorHora = valorHora;
     }
 
-    // retorna o calculo do salario do funcionario
+    /**
+     * Retorna o calculo do salario do funcionario
+     * @return salario calculado
+     */
     public float salario() {
         return valorHora * horasTrabalhadas;
     }
 
-    // retorna os dados do funcionario
+    /**
+     * Retorna uma string formatada do com os dados do funcionario e salario
+     * @return nome, horas e salario
+     */
     public String exibir() {
         return String.format("%s (Junior) trabalhou %.2fh e receberá R$ %.2f", nome, horasTrabalhadas, salario());
     }
