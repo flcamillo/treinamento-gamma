@@ -1,0 +1,22 @@
+Criar um catalogo de CD's
+
+cd:
+- id
+- titulo
+- preço
+- id_gravadora
+
+cd_musica:
+- id_cd
+- id_musica
+
+musica:
+- id
+- nome
+- autor
+- duração
+
+gravadora:
+- id
+- nome
+- site

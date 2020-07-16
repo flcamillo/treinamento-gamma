@@ -9,3 +9,82 @@ code.org
 Site sobre o GIT
 https://learngitbranching.js.org/?locale=pt_BR
 
+Site para criação de diagramas como Entidade Relacionamento
+diagrams.net
+
+MySQL - Exemplos:
+
+# Cria um banco de dados
+CREATE DATABASE IF NOT EXISTS mydb;
+
+# Seleciona o banco de dados criado
+USE mydb;
+
+# Cria a tabela funcionario
+CREATE TABLE IF NOT EXISTS funcionario (
+    matricula INT AUTO_INCREMENT,
+    nome VARCHAR(40) NOT NULL,
+    salario DECIMAL(8 , 2 ),
+    endereco VARCHAR(80),
+    dataadmissao DATE NOT NULL,
+    datanascimento DATE,
+    departamento VARCHAR(30) NOT NULL,
+    PRIMARY KEY (matricula)
+);
+
+# Cria a tabela projetos
+CREATE TABLE IF NOT EXISTS projetos (
+    codigo INT AUTO_INCREMENT,
+    descricao VARCHAR(60)  NOT NULL,
+    datainicio DATE,
+    datatermino DATE,
+    PRIMARY KEY (codigo)
+);
+
+# Cria a tabela dependentes
+CREATE TABLE IF NOT EXISTS dependentes (
+    codigo INT AUTO_INCREMENT,
+    nome VARCHAR(60)  NOT NULL,
+    datanascimento DATE,
+    matricula INT  NOT NULL,
+    PRIMARY KEY (codigo),
+    FOREIGN KEY (matricula)
+        REFERENCES funcionario (matricula)
+);
+
+# Cria a tabela historico de projetos
+CREATE TABLE IF NOT EXISTS historico_projetos (
+    matricula INT,
+    codigo_projeto INT,
+    nome VARCHAR(60) NOT NULL,
+    dataentrada DATE,
+    datasaida DATE,
+    PRIMARY KEY (matricula , codigo_projeto),
+    FOREIGN KEY (matricula)
+        REFERENCES funcionario (matricula),
+    FOREIGN KEY (codigo_projeto)
+        REFERENCES projetos (codigo)
+);
+
+# Inserção de um novo funcionario
+INSERT INTO funcionario(nome, salario, endereco, dataadmissao, datanascimento, departamento) VALUES("Leandro", 2000.35, "rua um, numero 3, bairro união", STR_TO_DATE( "01/12/2005", "%d/%m/%Y" ), STR_TO_DATE( "20/11/1985", "%d/%m/%Y"), "projetos");
+INSERT INTO funcionario(nome, salario, endereco, dataadmissao, datanascimento, departamento) VALUES("Daniel", 4000.50, "rua um, numero 4, bairro união", STR_TO_DATE( "01/12/2000", "%d/%m/%Y" ), STR_TO_DATE( "20/11/1981", "%d/%m/%Y"), "compras");
+
+# Inserção de um dependente do funcionario
+INSERT INTO dependentes(nome, datanascimento, matricula) VALUES("Camillo", STR_TO_DATE( "01/12/2010", "%d/%m/%Y" ), 1);
+INSERT INTO dependentes(nome, datanascimento, matricula) VALUES("Jose", STR_TO_DATE( "01/12/2010", "%d/%m/%Y" ), 1);
+INSERT INTO dependentes(nome, datanascimento, matricula) VALUES("Maria", STR_TO_DATE( "01/12/2010", "%d/%m/%Y" ), 2);
+
+# Exemplo de atualização
+UPDATE funcionario SET salario = 3000 WHERE matricula = 1;
+
+# Exemplos de query
+SELECT * FROM funcionario;
+SELECT * FROM funcionario WHERE salario > 2000;
+SELECT * FROM funcionario WHERE dataadmissao >= '2008-12-01';
+
+# Seleciona todos os funcionarios que possuam dependentes
+SELECT t1.nome, t2.nome AS dependente FROM funcionario AS t1 INNER JOIN dependentes AS t2 ON t2.matricula = t1.matricula;
+
+# Seleciona todos os funcionarios independente mesmo que ele não tenha dependentes
+SELECT t1.nome, t2.nome AS dependente FROM funcionario AS t1 LEFT JOIN dependentes AS t2 ON t2.matricula = t1.matricula;
