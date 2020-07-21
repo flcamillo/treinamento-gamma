@@ -1,0 +1,19 @@
+:root{
+    --cor-itau:rgb(255, 120, 0); 
+}
+
+body {
+    color: #eed4d4
+}
+
+div {
+    background-color: var(--cor-itau);
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.paragrafo {
+    font-size: 1.5em;
+}

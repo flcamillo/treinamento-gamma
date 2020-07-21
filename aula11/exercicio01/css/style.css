@@ -1,0 +1,38 @@
+p {
+    color: blueviolet;
+}
+
+p:nth-child(2) {
+    color: aqua;
+}
+
+h2 {
+    color: brown;
+    font-style: italic;
+}
+
+#destaque {
+    color: chartreuse;
+}
+
+.classe {
+    color: crimson;
+}
+
+#divisao1 p {
+    color: cadetblue;
+    font-style: italic;
+}
+
+#divisao1 p strong {
+    font-size: 25px;
+    color: black;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.alert {
+    background-color: burlywood;
+}
