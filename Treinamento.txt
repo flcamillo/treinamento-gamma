@@ -6,10 +6,10 @@ Apresentação pessoal e informar nivel de programação de 1-5
 Site sobre lógica de programação:
 code.org
 
-Site sobre o GIT
+Site sobre o GIT:
 https://learngitbranching.js.org/?locale=pt_BR
 
-Site para criação de diagramas como Entidade Relacionamento
+Site para criação de diagramas como Entidade Relacionamento:
 diagrams.net
 
 MySQL - Exemplos:
@@ -88,3 +88,69 @@ SELECT t1.nome, t2.nome AS dependente FROM funcionario AS t1 INNER JOIN dependen
 
 # Seleciona todos os funcionarios independente mesmo que ele não tenha dependentes
 SELECT t1.nome, t2.nome AS dependente FROM funcionario AS t1 LEFT JOIN dependentes AS t2 ON t2.matricula = t1.matricula;
+
+
+Componentes de um possível backend de uma aplicação:
+Usar modelo MVC
+Backend:
+- HTTP + JSON
+- Java + Spring Boot + TomCat
+- MySQL
+
+JPA - Java Persistence API
+- implementação em hibernate
+
+Maven - ferramenta para automação, gerenciamento de dependencias, compilação e execução de aplicações em Java.
+
+Dependencias que pode ser usadas em um projeto Spring Boot
+- JPA
+- Dev Tools
+- Web
+- MySQL Driver
+
+Setup do Node.js
+================
+Baixar a instalar o msi do Node.js
+Instalar o pacote abaixo (vide https://expressjs.com/pt-br/starter/generator.html)
+npm install express-generator -g
+
+Para criar um projeto Node:
+express --view=ejs myapp
+express --view=ejs turma5b-integracao-continnua
+cd turma5b-integracao-continnua
+npm install
+SET DEBUG=turma5b-integracao-continnua:* & npm start
+
+Para executar um arquivo .js digitar:
+node <arquivo.js>
+
+Videos para ver:
+http://www.torneseumprogramador.com.br/aula?id=kRy_VVLWtf4&aula=41&tipo=back-end&professor=Danilo
+
+Teste Unitarios:
+cypress
+jest
+
+Para executar um teste deve-se informa o seguinte comando:
+npx jest spec/cliente.spec.js (onde cliente.spec.js é o arquivo que contem os testes automatizados)
+
+Executando teste via robo do cypress:
+npx cypress open (modo interativo)
+npx cypress run -b chrome (modo batch, usando o navegador chrome)
+
+Instalação do jenkins:
+https://www.jenkins.io/download/
+Necessário instalar o plugin: build pipeline
+
+Repositório do Danilo:
+https://github.com/torneseumprogramador/treinamento-integracao-continua
+
+Comandos do Heroku CLI:
+heroku --version
+heroku login -i
+heroku git:remote -a flc-dev-turma5b-app1
+git push heroku master
+
+Para o build do projeto usar:
+git pull --force (baixa tudo do git para o servidor do jenkins)
+npm install      (instala o aplicativo)
