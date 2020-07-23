@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="js/dados.js"></script>
+
+    <title>Dados</title>
+</head>
+<body onload="validaLogin()">
+    <div class="container">
+
+        <div class="row justify-content-between align-items-center">
+            <div class="col-4">
+                <div class="row align-items-center">
+                    <div class="col text-right">
+                        <img class="foto" id="foto" src="" alt="Foto">
+                    </div>
+                    <div class="col text-left">
+                        <p id="nome">nome</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary" id="logout" onclick="logout()">Logout</button>
+            </div>
+        </div>    
+
+        <div class="row align-items-center">
+            <div class="col text-center">
+                <button class="btn btn-outline-info m-2" onclick="carregarUsuarios()">Usuarios</button>
+                <div class="col text-center" id="lista"></div>        
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
